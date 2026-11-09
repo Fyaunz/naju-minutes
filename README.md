@@ -4,9 +4,15 @@ A minimal Typst project template for creating PDFs with custom fonts and resourc
 
 ## Contents
 
-- `main.typ` — the primary document source.
+- `main.typ` — the document itself: metadata and protocol text.
+- `template/` — the template code, imported through `template/lib.typ`.
+  - `theme.typ` — colours and fonts.
+  - `assets.typ` — logo and icons.
+  - `components.typ` — `vote`, `vote-page`, `todo`, `todos`, `todo-list`, `todo-page`, `checkbox`, `date`.
+  - `pages.typ` — cover page and table of contents.
+  - `protokoll.typ` — the `protokoll` show rule: page setup and headings.
 - `fonts/` — bundled local fonts (Open Sans, Philosopher).
-- `resources/` — images and other assets used by the document.
+- `resources/` — the logo and the SVG icons in `resources/icons/`.
 - `target/` — output directory for generated PDFs.
 
 ## Requirements
@@ -20,7 +26,7 @@ A minimal Typst project template for creating PDFs with custom fonts and resourc
 2. Compile to PDF:
 
 ```
-typst compile main.typ target/output.pdf
+typst compile --font-path fonts main.typ target/output.pdf
 ```
 
 3. Open `target/output.pdf` to view the result.
